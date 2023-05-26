@@ -1,0 +1,17 @@
+### Unary
+
+GRPC localhost:9090/com.example.grpc.GreeterService/SendMessage
+
+{
+  "message": "John Doe"
+}
+
+### Stream server
+
+GRPC localhost:9090/com.example.grpc.GreeterService/Transactions
+
+{
+  "userId": "00001"
+}
+
+###

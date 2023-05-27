@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package com.example.grpc;
 
+option go_package = "./client";
 option java_package = "com.example.grpc";
 option java_outer_classname = "ExampleProto";
 
@@ -23,7 +24,16 @@ message TransactionRequest {
 }
 
 message TransactionResponse {
-  string transactionId = 1;
-  string description = 2;
-  float amount = 3;
+  string card_number = 1;
+  string expiration_date = 2;
+  string cvv = 3;
+  string card_type = 4;
+  string client_id = 5;
+  string client_name = 6;
+  string client_email = 7;
+  string client_address = 8;
+  string issued_date = 9;
+  string assigned_to = 10;
+  string emboss = 11;
+
 }

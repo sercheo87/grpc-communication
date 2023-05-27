@@ -1,3 +1,5 @@
+import time
+
 import grpc
 
 import greeter_pb2
@@ -31,10 +33,19 @@ def execute_grpc_greeter():
 
     # Consume server streaming RPC method
     for response in stub.Transactions(request):
-        print("Server response:", response.transactionId, response.description, response.amount)
+        print("Server response:", response)
 
 
 if __name__ == '__main__':
     print_hi('PyCharm')
+
+    start = time.time()
     execute_grpc_hello()
+    duration_execute_grpc_hello = time.time() - start
+
+    start = time.time()
     execute_grpc_greeter()
+    duration_execute_grpc_greeter = time.time() - start
+
+    print("Duration execute_grpc_hello:", duration_execute_grpc_hello)
+    print("Duration execute_grpc_greeter:", duration_execute_grpc_greeter)
